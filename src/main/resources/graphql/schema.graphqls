@@ -1,0 +1,25 @@
+type Mutation{
+    savePlayer(player: PlayerRequest) : Player
+    updatePlayer(id: Int, player:PlayerRequest): Player
+    deletePlayer(id: Int): Int
+}
+
+type Query{
+    getAllPlayers: [Player],
+    findById(id: Int): Player 
+}
+type Player{
+    id: Int,
+    name: String,
+    urlImg: String,
+    team: String,
+    age: Int
+
+}
+
+input PlayerRequest{
+    name: String,
+    urlImg: String,
+    team : String,
+    age : Int
+}
